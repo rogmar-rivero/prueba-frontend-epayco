@@ -15,8 +15,9 @@ export const Form = ({ onSubmit }: Props) => {
     register,
     handleSubmit,
     formState: { errors, isValid },
-    trigger,
-  } = useForm<ItemDto>();
+  } = useForm<ItemDto>({
+    mode: "onChange",
+  });
   const isNotOnlyNumber = /^(?!\d+$).*/;
 
   return (
@@ -42,7 +43,6 @@ export const Form = ({ onSubmit }: Props) => {
               },
             })}
             placeholder="quien eres?"
-            trigger={() => trigger("title")}
             errors={errors.title}
           />
         </Label>
@@ -65,7 +65,6 @@ export const Form = ({ onSubmit }: Props) => {
               },
             })}
             placeholder="cuentame algo..."
-            trigger={() => trigger("body")}
             errors={errors.body}
           />
         </Label>
