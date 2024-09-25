@@ -3,7 +3,6 @@ import { Input } from "../atoms/Input.tsx";
 import { TextArea } from "../atoms/TextArea.tsx";
 import { Button } from "../atoms/Button.tsx";
 import { useForm } from "react-hook-form";
-import { Title } from "../atoms/Title.tsx";
 import { ItemDto } from "../../types/Item";
 
 interface Props {
@@ -22,8 +21,6 @@ export const Form = ({ onSubmit }: Props) => {
 
   return (
     <>
-      <Title label="Add New Item" styles="text-[wheat] mb-4" />
-
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <Label label="Title">
           <Input

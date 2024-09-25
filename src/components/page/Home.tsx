@@ -15,6 +15,7 @@ export const Home = () => {
   return (
     <main className="home__container">
       <header className="home__header">
+        <Title label="Add New Item" styles="text-[wheat] mb-4" />
         <Form onSubmit={onSubmit} />
       </header>
 
