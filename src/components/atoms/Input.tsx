@@ -3,16 +3,14 @@ interface Props {
   register: UseFormRegisterReturn;
   placeholder: string;
   errors?: FieldError;
-  trigger: () => Promise<boolean>;
 }
 
-export const Input = ({ register, placeholder, errors, trigger }: Props) => {
+export const Input = ({ register, placeholder, errors }: Props) => {
   return (
     <>
       <input
         {...register}
         placeholder={placeholder}
-        onBlur={() => trigger()}
         className={`input ${errors ? "input--error" : ""}`}
       />
 

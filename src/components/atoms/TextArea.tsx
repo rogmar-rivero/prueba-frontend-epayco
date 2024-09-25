@@ -4,16 +4,14 @@ interface Props {
   register: UseFormRegisterReturn;
   placeholder: string;
   errors?: FieldError;
-  trigger: () => Promise<boolean>;
 }
 
-export const TextArea = ({ register, placeholder, trigger, errors }: Props) => {
+export const TextArea = ({ register, placeholder, errors }: Props) => {
   return (
     <>
       <textarea
         {...register}
         placeholder={placeholder}
-        onBlur={() => trigger()}
         className={`textarea ${errors ? "textarea--error" : ""}`}
       />
 
